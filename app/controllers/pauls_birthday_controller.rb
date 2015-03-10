@@ -6,6 +6,6 @@ class PaulsBirthdayController < ApplicationController
   private
 
   def is_today_pauls_birthday?
-    Time.now.to_s =~ /\A20\d\d-03-09/ ? true : false
+    Time.now.in_time_zone("Pacific Time (US & Canada)").to_s =~ /\A20\d\d-03-09/ ? true : false
   end
 end
